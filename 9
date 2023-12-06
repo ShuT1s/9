@@ -24,11 +24,6 @@ def regis():
         close_button = Button(win, text="Повторить ввод", command=lambda: dismiss(win))
         close_button.place(x=150, y=50)
         win.grab_set()
-    elif not os.path.exists('1_p.txt'):
-        def create_file(filename):
-            with open('1_p.txt', 'w'):
-                pass
-        create_file("1_p.txt")
     else:
         file = open("1_p.txt", "r+")
         a = file.read().split()
@@ -85,11 +80,6 @@ def avtoris():
         close_button = Button(win, text="Повторить ввод", command=lambda: dismiss(win))
         close_button.place(x=150, y=50)
         win.grab_set()
-    elif not os.path.exists('1_p.txt'):
-        def create_file(filename):
-            with open('1_p.txt', 'w'):
-                pass
-        create_file("1_p.txt")
     else:
         file = open("1_p.txt", "r+")
         a = file.read().split()
@@ -154,6 +144,12 @@ def avtoris():
                             win.grab_set()
                             break
         file.close()
+
+if not os.path.exists('1_p.txt'):
+        def create_file(filename):
+            with open('1_p.txt', 'w'):
+                pass
+        create_file("1_p.txt")
 
 root = Tk()
 root.geometry("650x400+500+50")
